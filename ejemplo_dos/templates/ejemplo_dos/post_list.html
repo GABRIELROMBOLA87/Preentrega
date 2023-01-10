@@ -1,0 +1,25 @@
+{% extends 'ejemplo_dos/base.html' %}
+
+{% block contenido%}
+{% if user.is_authenticated %}
+<li>
+    <a href="{% url 'ejemplo_dos_crear' %}">Nuevo Repuesto</a><p></p>
+    <a href="{% url 'ejemplo_dos_avatars_actualizar' user.id %}">Actualizar Avatar</a><p></p>
+    <a href="{% url 'ejemplo_dos_users_actualizar' user.id %}">Actualizar Perfil</a><p></p>
+    <a href="{% url 'ejemplo_dos_mensajes_listar' %}">Mensajes</a><p></p>
+</li>
+{% endif %}
+<ul>
+{% for post in object_list %}
+    <li>
+        {{post.Repuesto}}
+        {% if user.is_authenticated %}
+        <a href="{% url 'ejemplo_dos_borrar' post.id %}">Borrar</a>
+        <a href="{% url 'ejemplo_dos_actualizar' post.id %}">Actualizar</a>
+        {% endif %}
+        <a href="{% url 'ejemplo_dos_detalle' post.id %}">Ver Detalle</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
