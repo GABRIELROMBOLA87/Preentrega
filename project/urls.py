@@ -18,9 +18,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.urls import path
-from ejemplo.views import (index, saludar_a, sumar, buscar, monstrar_familiares,
-                           BuscarFamiliar, AltaFamiliar, ActualizarFamiliar, BorrarFamiliar,
-                           FamiliarList, FamiliarCrear, FamiliarBorrar, FamiliarActualizar, FamiliarDetalle)
 from ejemplo_dos.views import (index, PostListar, PostCrear,
                                PostActualizar, PostBorrar, PostDetalle,
                                UserSignUp, UserLogin, UserLogout, AvatarActualizar,
